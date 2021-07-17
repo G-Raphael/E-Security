@@ -1,0 +1,102 @@
+// app
+import logo from './logo.svg';
+import './App.css';
+import Button from './button';
+import Button2 from './button2';
+import Card from './Card';
+import Rect from './Rect';
+import UserCard from './UserCard';
+
+function App() {
+  const product = {Title: "Bag", description: "a small blue bag", price: 3000}
+  const user = {name: "Raphael", age: 23, height : "171m"}
+  const image = 'Am doing something New. an d currently am working on how to input image'
+  const handleProduct = ()=> {
+    alert(product.Title)
+  }
+  return (
+    <div className="App">
+     {/* <Button text="Learn more" /> */}
+     {/* <Button text="Discover more" /> */}
+     {/* <Button2 text="View" />
+     <Button2 text="View more" /> */}
+
+     {/* <Card myproduct = {product} myClick = {handleProduct}/> */}
+     {/* <Rect desn = {image} /> */}
+     <UserCard  userData = {user} />
+    </div>
+  );
+}
+
+export default App;
+
+
+//usercard
+
+import React, { Component } from 'react'
+
+export default class UserCard extends Component {
+    render() {
+        return (
+            <div>
+                <h1>{this.props.userData.name}</h1>
+                <h1>{this.props.userData.age}</h1>
+                <h1>{this.props.userData.height}</h1>
+            </div>
+        )
+    }
+}
+
+//cards
+
+import React from 'react'
+
+export default function Card(props) {
+    return (
+        <div>
+            <h1>{props.myproduct.Title}</h1>
+            <p>{props.myproduct.description}</p>
+            <p>{props.myproduct.price}</p>
+            <button onClick= {props.myClick} >Add To Cart</button>
+        </div>
+    )
+}
+ //button
+ export default function Button(props){
+    return <button>{props.text}</button>
+}
+
+//button2
+import React from 'react';
+
+export default class Button2 extends React.Component{
+    render(){
+        return <button>{this.props.text}</button>
+    }
+
+}
+//React
+import React, { Component } from 'react'
+
+export default class Rect extends Component {
+    render() {
+        return (
+            <div>
+                <p>{this.props.desn}</p>
+            </div>
+        )
+    }
+}
+
+//Rect
+import React, { Component } from 'react'
+
+export default class Rect extends Component {
+    render() {
+        return (
+            <div>
+                <p>{this.props.desn}</p>
+            </div>
+        )
+    }
+}
